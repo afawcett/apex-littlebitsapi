@@ -13,3 +13,4 @@ Deploy the code and setup the Custom Setting or pass the Access Token and Device
 ```java
 new LittleBits().getDevice().output();
 ```
+If **#clicksnotcode** is your thing, there is an integration with **Chatter via IFTTT** [here](https://ifttt.com/connect/littlebits/salesforce_chatter).
