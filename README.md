@@ -11,5 +11,5 @@ An Apex wrapper around the [LittleBits Cloud API](http://developer.littlebitsclo
 Deploy the code and setup the Custom Setting or pass the Access Token and Device ID to the API directly, the following code uses the Custom Setting and sends the default command to the device. I plan to expand this to support more of the API, including Apex web hooks to allow subscription to events from the device inputs.
 
 ```java
-     new LittleBits().getDevice().output();
+new LittleBits().getDevice().output();
 ```
