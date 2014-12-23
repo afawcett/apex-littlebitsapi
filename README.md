@@ -1,4 +1,4 @@
 apex-littlebitsapi
 ==================
 
-An Apex wrapper around the LittleBits API
+An Apex wrapper around the LittleBits Cloud API
