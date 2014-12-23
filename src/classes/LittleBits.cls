@@ -102,6 +102,8 @@ public class LittleBits {
         	request.setMethod('POST');
         	if(percent!=null && durationMs!=null)
         	{
+        		// This current gives Bad Request, despite it appearing to match the docs?
+        		// http://discuss.littlebits.cc/t/littlebits-cloud-api-giving-bad-request-from-devices-id-output-post/11969
         		Map<String, Object> parameters = new Map<String, Object>();
         		parameters.put('percent', percent);
         		parameters.put('duration_ms', durationMs);
