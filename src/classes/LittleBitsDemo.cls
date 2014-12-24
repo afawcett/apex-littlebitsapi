@@ -28,7 +28,7 @@ public class LittleBitsDemo {
 
 	public static void outputToDevice()
 	{
-		// Write amplitude to device output 
-		new LittleBits().getDevice().output();
+		// Write 80% amplitude to the device output for 10 seconds
+		new LittleBits().getDevice().output(80, 10000);
 	}
 }

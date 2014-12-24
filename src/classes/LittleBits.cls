@@ -100,15 +100,9 @@ public class LittleBits {
         	request.setHeader('Authorization', 'Bearer ' + accessToken);
         	request.setHeader('Accept', 'application/vnd.littlebits.v2+json');
         	request.setMethod('POST');
+        	// http://discuss.littlebits.cc/t/littlebits-cloud-api-giving-bad-request-from-devices-id-output-post/11969
         	if(percent!=null && durationMs!=null)
-        	{
-        		// This current gives Bad Request, despite it appearing to match the docs?
-        		// http://discuss.littlebits.cc/t/littlebits-cloud-api-giving-bad-request-from-devices-id-output-post/11969
-        		Map<String, Object> parameters = new Map<String, Object>();
-        		parameters.put('percent', percent);
-        		parameters.put('duration_ms', durationMs);
-        		request.setBody(JSON.serialize(parameters));
-        	}
+        		request.setBody('percent='+percent+'&duration_ms='+durationMs);
         	HttpResponse response = h.send(request);
         	if(response.getStatusCode()!=200)
         		throw new LittleBitsException(response.getBody());
