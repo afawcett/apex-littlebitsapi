@@ -42,6 +42,8 @@ public class LittleBits {
 	 * Access token is available under Settings at http://control.littlebitscloud.cc/
 	 **/
 	public LittleBits(String accessToken) {
+		if(accessToken==null)
+			throw new LittleBitsException('Must specify an Access Token, either as parameter or Custom Setting configuration.');
 		this.AccessToken = accessToken;
 	}
 
@@ -79,6 +81,8 @@ public class LittleBits {
 		 * Constructs a Device for the given Id
 		 **/
 		private Device(String accessToken, String deviceId) {
+			if(deviceId==null)
+				throw new LittleBitsException('Must specify a Device Id, either as parameter or Custom Setting configuration.');			
 			this.Id = deviceId;
 			this.accessToken = accessToken;
 		}				
