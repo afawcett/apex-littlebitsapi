@@ -17,4 +17,4 @@ new LittleBits().getDevice().output(80, 10000);
 ```
 I plan to expand this to support more of the API, including Apex web hooks to allow subscription to events from the device inputs.
 
-If **#clicksnotcode** is your thing, there is an integration with **Chatter via IFTTT** [here](https://ifttt.com/connect/littlebits/salesforce_chatter).
+If **#clicksnotcode** is your thing, there is an integration with **Chatter via IFTTT** [here](https://ifttt.com/connect/littlebits/salesforce_chatter). I am also working on a **LittleBits Connector** [here](https://github.com/afawcett/littlebits-connector).
