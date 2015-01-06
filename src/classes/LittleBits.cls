@@ -111,6 +111,32 @@ public class LittleBits {
         	if(response.getStatusCode()!=200)
         		throw new LittleBitsException(response.getBody());
 		}
+		
+		/**
+		 * Subscribe to the Device for an event.
+		 * 
+		 * Events String (littleBitEvent String) to listen for are:
+		 * 
+		 * 	amplitude                  –––– when there is any voltage (catch-all, default)
+			amplitude:delta:sustain    –––– when high voltage is constant (eg button being held)
+			amplitude:delta:ignite     –––– when there is significant voltage jump (eg button press)
+			amplitude:delta:release    –––– when there is significant voltage drop (eg button release)
+			amplitude:delta:nap        –––– when low voltage is constant (eg idle bitSnap system)
+			amplitude:level:active     –––– generic, when there is high voltage (eg during a sustain or maybe just ignited)
+			amplitude:level:idle       –––– generic, when there is low voltage (eg during a long nap or maybe just released)
+		 * 
+		 * */
+		
+		public boolean subscribe(String endpoint, String littleBitEvent){
+			HttpRequest req = new HttpRequest(); 
+          		req.setMethod('POST'); 
+          		req.setEndpoint('http://api-http.littlebitscloud.cc/subscriptions');
+			req.setHeader('Authorization','Bearer ' + accessToken);
+			req.setBody('publisher_id=' + Id + '&subscriber_id=' + endpoint + '&publisher_events=' + littleBitEvent);
+			HttpResponse response = h.send(request);
+			if(response.getStatusCode()!=201)
+				throw new LittleBitsException(response.getBody());
+		}
 	}
 
 	public class LittleBitsException extends Exception { }
